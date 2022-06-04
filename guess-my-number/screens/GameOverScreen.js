@@ -1,8 +1,13 @@
-import { Text } from 'react-native';
+import { View, Image } from 'react-native';
+
+import Title from '../components/ui/Title';
 
 function GameOverScreen() {
   return (
-    <Text>Game is Over</Text>
+    <View>
+      <Title>GAME OVER SUCKA!</Title>
+      <Image source={require('../assets/images/success.png')} />
+    </View>
   );
 }
 
