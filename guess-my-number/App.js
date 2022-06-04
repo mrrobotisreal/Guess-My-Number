@@ -16,10 +16,14 @@ export default function App() {
     setUserNumber(pickedNumber);
   }
 
+  function gameOverHandler() {
+    setGameIsOver(true);
+  }
+
   let screen = <StartGameScreen onPickNumber={pickedNumberHandler} />;
 
   if (userNumber) {
-    screen = <GameScreen userNumber={userNumber} />;
+    screen = <GameScreen userNumber={userNumber} onGameOver={gameOverHandler} />;
   }
 
   if (gameIsOver) {
