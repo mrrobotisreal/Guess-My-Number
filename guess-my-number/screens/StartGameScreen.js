@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { TextInput, View, StyleSheet, Alert } from 'react-native';
+import { TextInput, View, StyleSheet, Alert, Text } from 'react-native';
 
 import PrimaryButton from '../components/ui/PrimaryButton';
 import Title from '../components/ui/Title';
@@ -34,6 +34,7 @@ function StartGameScreen({ onPickNumber }) {
     <View style={styles.rootContainer}>
       <Title>Guess My Number Sucka!</Title>
       <View style={styles.inputContainer}>
+        <Text>Pick a Number</Text>
         <TextInput style={styles.numberInput} maxLength={2} keyboardType="number-pad"
           autoCapitalize="none"
           autoCorrect={false}
@@ -58,6 +59,7 @@ const styles = StyleSheet.create({
   rootContainer: {
     flex: 1,
     marginTop: 100,
+    alignItems: 'center',
   },
   inputContainer: {
     justifyContent: 'center',
@@ -75,6 +77,10 @@ const styles = StyleSheet.create({
     },
     shadowRadius: 6,
     shadowOpacity: 0.25,
+  },
+  instructionText: {
+    color: Colors.primary500,
+    fontSize: 24,
   },
   numberInput: {
     height: 50,
