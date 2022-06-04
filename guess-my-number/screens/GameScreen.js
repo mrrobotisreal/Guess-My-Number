@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Text, StyleSheet, View } from 'react-native';
 
-import Title from '../components/Title';
+import Title from '../components/ui/Title';
 import NumberContainer from '../components/game/NumberContainer';
 
 function generateRandomBetween(min, max, exclude) {
