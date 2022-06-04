@@ -35,6 +35,7 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     borderColor: '#ddb52f',
     borderWidth: 2,
+    borderRadius: 6,
     padding: 12,
   },
 });
