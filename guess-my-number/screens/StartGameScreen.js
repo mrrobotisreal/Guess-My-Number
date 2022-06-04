@@ -34,7 +34,7 @@ function StartGameScreen({ onPickNumber }) {
     <View style={styles.rootContainer}>
       <Title>Guess My Number Sucka!</Title>
       <View style={styles.inputContainer}>
-        <Text>Pick a Number</Text>
+        <Text style={styles.instructionText}>Pick a Number</Text>
         <TextInput style={styles.numberInput} maxLength={2} keyboardType="number-pad"
           autoCapitalize="none"
           autoCorrect={false}
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
   },
   instructionText: {
-    color: Colors.primary500,
+    color: Colors.accent500,
     fontSize: 24,
   },
   numberInput: {
