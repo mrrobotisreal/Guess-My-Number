@@ -52,7 +52,7 @@ function GameScreen({userNumber, onGameOver}) {
     }
     const newRndnumber = generateRandomBetween(minBoundary, maxBoundary, currentGuess);
     setCurrentGuess(newRndnumber);
-    setGuessRounds(prevGuessRounds => [...prevGuessRounds, newRndnumber]);
+    setGuessRounds(prevGuessRounds => [newRndnumber, ...prevGuessRounds]);
   }
 
   const guessRoundsListLength = guessRounds.length;
@@ -82,9 +82,7 @@ function GameScreen({userNumber, onGameOver}) {
             data={guessRounds}
             renderItem={itemData => {
               return (
-                <GuessLogItem roundNumber={guessRoundsListLength - itemData.index} guess={itemData.item}>
-                  {itemData.item}
-                </GuessLogItem>
+                <GuessLogItem roundNumber={guessRoundsListLength - itemData.index} guess={itemData.item} />
               );
             }}
             keyExtractor={(item) => item}
