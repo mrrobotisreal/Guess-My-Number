@@ -8,12 +8,6 @@ import PrimaryButton from '../components/ui/PrimaryButton';
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
 
-  useEffect(() => {
-    if (currentGuess ===  userNumber) {
-      //
-    }
-  }, []);
-
   if (rndNum === exclude) {
     return generateRandomBetween(min, max, exclude);
   } else {
@@ -24,9 +18,15 @@ function generateRandomBetween(min, max, exclude) {
 let minBoundary = 1;
 let maxBoundary = 100;
 
-function GameScreen({userNumber}) {
+function GameScreen({userNumber, onGameOver}) {
   const initialGuess = generateRandomBetween(minBoundary, maxBoundary, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
+
+  useEffect(() => {
+    if (currentGuess ===  userNumber) {
+      onGameOver();
+    }
+  }, [currentGuess, userNumber, onGameOver]);
 
   function nextGuessHandler(direction) {
     if ((direction === 'lower' && currentGuess < userNumber) || (direction === 'greater' && currentGuess > userNumber)) {
