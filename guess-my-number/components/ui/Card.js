@@ -4,7 +4,7 @@ import Colors from '../../constants/colors';
 
 function Card({children}) {
   return (
-    <View style={styles.card}></View>
+    <View style={styles.card}>{children}</View>
   );
 }
 
