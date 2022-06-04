@@ -29,14 +29,4 @@ const styles = StyleSheet.create({
   text: {
     color: 'white',
   },
-  title: {
-    fontSize: 24,
-    fontWeight: 'bold',
-    color: '#ddb52f',
-    textAlign: 'center',
-    borderColor: '#ddb52f',
-    borderWidth: 2,
-    borderRadius: 6,
-    padding: 12,
-  },
 });
